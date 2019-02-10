@@ -1,0 +1,55 @@
+<H1>Habit</H1>
+
+<div class="container">
+    <div class="alert alert-warning" *ngIf="habitForm.dirty && habitForm.invalid">Enter valid value</div>
+
+    <form (ngSubmit)="!habitForm.invalid && saveHabit()" #habitForm="ngForm">  
+
+      <fieldset class="form-group">
+        <label>Habit Name</label>
+        <input type="text"  #habitName="ngModel"
+        [(ngModel)]="habit.habitname" 
+        class="form-control" 
+        name="habitName" required="required" minlength="5">
+      </fieldset>
+
+      <fieldset class="form-group">
+          <label>Description</label>
+          <input type="text"  #description="ngModel"
+          [(ngModel)]="habit.description" 
+          class="form-control" 
+          name="description" required="required" minlength="5">
+        </fieldset>
+
+        <fieldset  class="form-group">
+          <label>Priorityx</label>
+          <input type="number" #priority="ngModel"
+          [(ngModel)]="habit.priority" 
+          class="form-control" 
+          name="priority" 
+          required="required">
+        </fieldset>
+
+        <fieldset  class="form-group">
+            <label>Reminderx</label>
+            <input type="text" #reminder="ngModel"
+            [(ngModel)]="habit.reminder" 
+            class="form-control" 
+            name="reminder" 
+            required="required">
+          </fieldset>
+
+          <fieldset  class="form-group">
+              <label>Reward</label>
+              <input type="text" #reward="ngModel"
+              [(ngModel)]="habit.reward" 
+              class="form-control" 
+              name="reward" 
+              required="required">
+            </fieldset>
+    
+      <!-- You can either use the click event or the type = "submit" -->
+      <!-- <button type="submit" button btn-success" (click)="saveTodo()">Save</button>  -->
+      <button type="submit" class="btn btn-success">Save</button> 
+  </form>
+  </div>

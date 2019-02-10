@@ -1,0 +1,36 @@
+<div><h1>My Habits</h1></div>
+<div *ngIf='message' class="alert warning-alert">{{message}}</div>
+<div class="container-fluid">
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>Habit Name</th>
+      <th>Description</th>
+      <th>Priority</th>
+      <th>Reminder</th>
+      <th>Reward</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      <!-- for (Todo todo: todos) {} -->
+      <!-- angular directive for loops -->
+      <tr *ngFor="let habit of habits">
+        <td>{{habit.habitname}}</td>
+        <td>{{habit.description}}</td>
+        <td>{{habit.priority}}</td>
+        <td>{{habit.reminder}}</td>
+        <td>{{habit.reward}}</td>
+        <td><button (click)="updateHabit(habit.id)" class="btn btn-success">Update</button></td>
+        <td><button (click)="deleteHabit(habit.id)" class="btn btn-warning">Delete</button></td>
+    </tr>
+    <!-- } -->
+  </tbody>
+</table>
+
+<div class="row">
+    <button (click)="addHabit()" class="btn btn-success">Add</button>
+</div>
+</div>
