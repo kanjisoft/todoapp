@@ -1,14 +1,19 @@
 <h1>My ToDos</h1>
 <div *ngIf='message' class="alert warning-alert">{{message}}</div>
 <div class="container">
-<table class="table">
+  <div class="row">
+    <button *ngIf="showAll" (click)="toggleShowAll()" class="btn btn-success">Show Current</button>
+    <button *ngIf="!showAll" (click)="toggleShowAll()" class="btn btn-success">Show All</button>
+</div>
+
+  <table class="table">
   <thead>
     <tr>
       <th>Description</th>
       <th>Taget Date</th>
       <th>is Complete</th>
       <th>Update</th>
-      <th>Delete</th>
+      <th>Complete</th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +24,7 @@
         <td>{{todo.targetDate | date}}</td>
         <td>{{todo.done}}</td>
         <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
-        <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
+        <td><button (click)="toggleDone(todo.id)" class="btn btn-warning">Complete</button></td>
     </tr>
     <!-- } -->
   </tbody>

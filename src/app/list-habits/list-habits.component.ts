@@ -23,6 +23,7 @@ export class ListHabitsComponent implements OnInit {
 
   habits : Habit[];
   message : string;
+  showAll: boolean = false;
 
 
   constructor(
@@ -64,6 +65,15 @@ export class ListHabitsComponent implements OnInit {
     console.log(`addHabit`);
     this.router.navigate(['habits', -1])
   }
-
+  toggleShowAll(){
+    console.log("this.showAll: " + this.showAll)
+    if (this.showAll){
+      this.showAll = false; 
+    }
+    else {
+      this.showAll = true; 
+    }
+    this.refreshHabits(); 
+  }
 
 }

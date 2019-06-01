@@ -9,16 +9,27 @@ import { TODO_JPA_API_URL } from 'src/app/app.constants';
 })
 
 export class TodoDataService {
-
+  
   constructor(
     private http:HttpClient
   ) { }
 
-  retrieveAllTodos(username){
+  retrieveAllTodos(username, showAll){
     console.log("retrieveAllTodos");
-    //return this.http.get<ToDo[]>(`http://localhost:8080/users/${username}/todos`);    
-    return this.http.get<ToDo[]>(`${TODO_JPA_API_URL}/users/${username}/todos`);
+    if (showAll){    
+      return this.http.get<ToDo[]>(`${TODO_JPA_API_URL}/users/${username}/todos/all`);
+    }
+    return this.http.get<ToDo[]>(`${TODO_JPA_API_URL}/users/${username}/todos/current`);
   }
+
+
+  // turn on or off the "done" flag
+  toggleTodo(username, id)
+  {
+    // toggle the "done" flag from on or off
+      return this.http.get(`${TODO_JPA_API_URL}/users/${username}/todos/${id}/toggle`); 
+  }
+
 
   deleteTodo(username, id) {
     return this.http.delete(`${TODO_JPA_API_URL}/users/${username}/todos/${id}`);

@@ -1,0 +1,23 @@
+    tr {
+        width: 90%;
+        display: inline-table;
+        table-layout: fixed;
+    }
+    table{
+     height:500px;              
+     display: -moz-groupbox;    
+    }
+    thead{
+        width: 90%;
+        position: absolute;
+      }
+    tbody{
+      overflow-y: scroll;      
+      height: 455px;            
+      width: 90%;
+      top: 200px;
+      position: absolute;
+    }
+  
+      
+    

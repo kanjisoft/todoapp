@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'todos/:id', component: TodoComponent, canActivate:[RouteGuardService]},  
   { path: 'habits', component: ListHabitsComponent, canActivate:[RouteGuardService]},  
   { path: 'habits/:id', component: HabitComponent, canActivate:[RouteGuardService]},  
-  { path: '**', component: ErrorComponent }
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({

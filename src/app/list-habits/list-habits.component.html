@@ -1,31 +1,45 @@
 <div><h1>My Habits</h1></div>
 <div *ngIf='message' class="alert warning-alert">{{message}}</div>
-<div class="container-fluid">
-  
-<table class="table">
+<div class="container">
+  <div class="row">
+    <button (click)="toggleShowAll()" class="btn btn-success">Show All</button>
+</div>
+<table class="table" class ="fixed-header" class="table table-striped table-bordered table-sm"> 
+<!-- <table class ="fixed-header">  -->
+
   <thead>
     <tr>
-      <th>Habit Name</th>
-      <th>Description</th>
-      <th>Priority</th>
-      <th>Reminder</th>
-      <th>Reward</th>
-      <th>Update</th>
-      <th>Delete</th>
+      <th  width=10%>Habit Name</th>
+      <th  width=10%>Description</th>
+      <th  width=5%>Priority</th>
+      <th  width=10%>Reminder</th>
+      <th  width=10%>Reward</th>
+      <th  width=10%>Update</th>
+      <th  width=10%>Delete</th>
     </tr>
   </thead>
   <tbody>
       <!-- for (Todo todo: todos) {} -->
       <!-- angular directive for loops -->
       <tr *ngFor="let habit of habits">
-        <td>{{habit.habitname}}</td>
-        <td>{{habit.description}}</td>
-        <td>{{habit.priority}}</td>
-        <td>{{habit.reminder}}</td>
-        <td>{{habit.reward}}</td>
-        <td><button (click)="updateHabit(habit.id)" class="btn btn-success">Update</button></td>
-        <td><button (click)="deleteHabit(habit.id)" class="btn btn-warning">Delete</button></td>
-    </tr>
+        <!-- <td width=10%>{{habit.habitname}}</td>
+        <td width=10%>{{habit.description}}</td>
+        <td width=5%>{{habit.priority}}</td>
+        <td width=10%>{{habit.reminder}}</td>
+        <td width=10%>{{habit.reward}}</td>
+        <td width=10%><button (click)="updateHabit(habit.id)" class="btn btn-success">Update</button></td>
+        <td width=10%><button (click)="deleteHabit(habit.id)" class="btn btn-warning">Delete</button></td> -->
+
+
+        <td width=10%>{{habit.habitname}}</td>
+        <td width=10%>{{habit.description}}</td>
+        <td width=5%>{{habit.priority}}</td>
+        <td width=10%>{{habit.reminder}}</td>
+        <td width=10%>{{habit.reward}}</td>
+        <td width=10%><button (click)="updateHabit(habit.id)" class="btn btn-success">Update</button></td>
+        <td width=10%><button (click)="deleteHabit(habit.id)" class="btn btn-warning">Delete</button></td>
+
+      </tr>
     <!-- } -->
   </tbody>
 </table>

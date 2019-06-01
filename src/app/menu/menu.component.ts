@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
 
   // isUserLoggedIn: boolean = false
 
-  constructor(private harcodedAuthenticationService : HarcodedAuthenticationService ) { }
+  constructor(public harcodedAuthenticationService : HarcodedAuthenticationService ) { }
 
   ngOnInit() {
     // this.isUserLoggedIn = this.harcodedAuthenticationService.isUserLoggedIn()

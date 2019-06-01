@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  errorMessage = 'An error occured! Contact support!'
+  errorMessage = 'Select signup or login for the todo app!'
 
   constructor() { }
 

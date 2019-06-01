@@ -1,3 +1,20 @@
 .ng-invalid:not(form) {
     border-left: 5px solid red;
 }
+tr {
+    width: 100%;
+    display: inline-table;
+    table-layout: fixed;
+    }
+    
+    table{
+     height:300px;              
+     display: -moz-groupbox;    
+    }
+    tbody{
+      overflow-y: scroll;      
+      height: 200px;            
+      width: 100%;
+      position: absolute;
+    }
+    
